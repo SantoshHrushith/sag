@@ -56,35 +56,3 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
-.env-card {
-  position: relative;
-  scroll-snap-align: start;
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  flex-shrink: 0;
-  width: 30vw;
-  height: 70vh;
-}
-
-.env-card.selected {
-  width: 70vw;
-}
-
-/* Tablet and below */
-@media (max-width: 1024px) {
-  .env-card,
-  .env-card.selected {
-    width: 75vw !important;
-    height: 65vh !important;
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .env-card,
-  .env-card.selected {
-    width: 75vw !important;
-    height: 65vh !important;
-  }
-}

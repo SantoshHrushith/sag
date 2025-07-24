@@ -6,7 +6,6 @@ import Environments from "@/componets/Environments";
 import Exploded from "@/componets/Exploded";
 import Exp from "@/componets/Exp";
 import Exp1 from "@/componets/Exp1";
-import Magic from "@/componets/UI/Magic";
 import VideoScroller from "@/componets/Video";
 
 export default function Home() {
@@ -127,7 +126,6 @@ export default function Home() {
       {/* <Exploded/> */}
       {/* <Exp/> */}
       <Exp1/>
-      {/* <Magic/> */}
     </div>
   );
 }
