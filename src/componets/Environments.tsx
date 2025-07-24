@@ -82,7 +82,7 @@ export default function Environments() {
                         >
 
                             <div className="w-full h-full relative">
-                                <img
+                                <Image
                                     ref={(el) => { if (el) { imageRefs.current[index] = el } }}
                                     src={env.image}
                                     alt={env.topText}

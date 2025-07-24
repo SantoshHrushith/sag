@@ -108,7 +108,7 @@
 //       />
 
 //       <div className="absolute top-10 left-1/2 -translate-x-1/2 text-white text-3xl font-bold z-10">
-//         SAGA's Inside Magic
+//         SAGAs Inside Magic
 //       </div>
 
 //       {/* Padding for scroll */}
@@ -226,7 +226,7 @@ export default function Exploded() {
       />
 
       <div className="absolute top-10 left-1/2 -translate-x-1/2 text-white text-3xl font-bold z-10">
-        SAGA's Inside Magic
+        SAGA&apos;s Inside Magic
       </div>
 
       {/* Padding for scroll */}
