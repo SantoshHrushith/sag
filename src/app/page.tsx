@@ -1,103 +1,134 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Environments from "@/componets/Environments";
+import Exploded from "@/componets/Exploded";
+import Exp from "@/componets/Exp";
+import Exp1 from "@/componets/Exp1";
+import Magic from "@/componets/UI/Magic";
+import VideoScroller from "@/componets/Video";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileOrTablet(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div className="font-sans">
+      {/* === Hero Section === */}
+      <div className="relative w-full h-screen overflow-hidden">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={
+            isMobileOrTablet
+              ? "/videos/gen4-hero-mobile-final.mp4"
+              : "/videos/gen4-hero-desktop-tony-2.mp4"
+          }
+          autoPlay
+          muted
+          playsInline
+        />
+        <div className="absolute z-10 w-full h-full flex items-start justify-start px-6 sm:px-20">
+          <div className="pt-[25%] sm:pt-[15%] max-w-xl">
+            <h1 className="text-4xl sm:text-6xl font-bold text-white leading-snug">
+              Sleeker.<br />
+              Smarter.<br />
+              Made for you.
+            </h1>
+            <button className="mt-6 px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-gradient-to-r from-blue-400 to-green-400 transition-all duration-300">
+              Explore More
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </div>
+
+      {/* === Product Images Section === */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-6 sm:px-20 py-16">
+        {/* Product Card - Recess */}
+        <div className="relative w-full">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="https://eubiq.b-cdn.net/saga/Rec%204.png"
+            alt="Recess Product"
+            width={800}
+            height={600}
+            className="w-full h-auto object-cover rounded-2xl shadow-md"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+          {/* Desktop Overlay */}
+          {!isMobileOrTablet && (
+            <>
+              <div className="absolute bottom-6 left-6 bg-black bg-opacity-60 text-white px-4 py-2 rounded-lg text-lg font-semibold">
+                Recess
+              </div>
+              <button className="absolute bottom-6 right-6 bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r from-blue-400 to-green-400 transition-all duration-300">
+                Explore
+              </button>
+            </>
+          )}
+
+          {/* Mobile/Tablet below section */}
+          {isMobileOrTablet && (
+            <div className="mt-4 flex items-center justify-between">
+              <div className="text-xl font-semibold">Recess</div>
+              <button className="bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300">
+                Explore
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Product Card - Surface */}
+        <div className="relative w-full">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            src="https://eubiq.b-cdn.net/saga/R1000%20S44%20S91%20SUltra%20S49%20Top%20Conference%20View%20.png.png"
+            alt="Surface Product"
+            width={800}
+            height={600}
+            className="w-full h-full object-cover rounded-2xl shadow-md"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+          {!isMobileOrTablet && (
+            <>
+              <div className="absolute bottom-6 left-6 bg-black bg-opacity-60 text-white px-4 py-2 rounded-lg text-lg font-semibold">
+                Surface
+              </div>
+              <button className="absolute bottom-6 right-6 bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r from-blue-400 to-green-400 transition-all duration-300">
+                Explore
+              </button>
+            </>
+          )}
+
+          {isMobileOrTablet && (
+            <div className="mt-4 flex items-center justify-between">
+              <div className="text-xl font-semibold">Surface</div>
+              <button className="bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300">
+                Explore
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+      
+      {/* why saga Powertrack */}
+      <div className="text-center text-4xl md:text-6xl font-bold leading-tight">
+        SAGA PowerTracks<br />
+        Make your Surrounding <span className="italic">Elegant</span>
+      </div>
+      <Environments />
+          {/* <VideoScroller/> */}
+      {/* <Exploded/> */}
+      {/* <Exp/> */}
+      <Exp1/>
+      {/* <Magic/> */}
     </div>
   );
 }
+ 

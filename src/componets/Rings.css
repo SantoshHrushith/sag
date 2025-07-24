@@ -1,0 +1,39 @@
+.futuristic-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background: radial-gradient(circle at center, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.outer-solid-ring {
+  border: 4px solid #3ff;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.inner-dotted-ring-green-lg {
+  border: 4px dotted #0f0;
+  border-radius: 50%;
+  padding: 16px;
+}
+
+.inner-dotted-ring-blue-md {
+  border: 4px dotted #00f;
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.inner-dotted-ring-green-sm {
+  border: 4px dotted #0f0;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.center-dotted-ring-lime {
+  width: 24px;
+  height: 24px;
+  border: 4px dotted lime;
+  border-radius: 50%;
+  margin: auto;
+}
