@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Environments from "@/componets/Environments";
-import Exploded from "@/componets/Exploded";
-import Exp from "@/componets/Exp";
+// import Exploded from "@/componets/Exploded";
+// import Exp from "@/componets/Exp";
 import Exp1 from "@/componets/Exp1";
-import VideoScroller from "@/componets/Video";
+// import VideoScroller from "@/componets/Video";
 
 export default function Home() {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);

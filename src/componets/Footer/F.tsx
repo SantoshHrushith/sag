@@ -5,6 +5,7 @@ import {
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,7 +55,7 @@ export default function F() {
                 {/* Image Section with Parallax Effect */}
                 <div className="relative w-full md:w-1/3 min-h-[300px] rounded-xl overflow-hidden shadow-2xl">
                     {/* Parallax Image */}
-                    <img
+                    <Image
                         ref={imageRef}
                         src="https://eubiq.b-cdn.net/saga/Hero%20shot.png"
                         alt="Saga Hero"
