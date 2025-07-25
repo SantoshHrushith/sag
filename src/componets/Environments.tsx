@@ -78,16 +78,24 @@ export default function Environments() {
                         <div
                             key={index}
                             className={`env-card ${isSelected ? "selected" : ""}`}
-                            // ref={(el) => { if (el) imageRefs.current[index] = el }}
                         >
 
                             <div className="w-full h-full relative">
-                                <Image
+                                {/* <img
                                     ref={(el) => { if (el) { imageRefs.current[index] = el } }}
                                     src={env.image}
                                     alt={env.topText}
                                     className="w-full h-[125%] object-cover"
-                                />
+                                /> */}
+                                <div className="relative w-full h-[125%]">
+                                    <Image
+                                        ref={(el) => { if (el) { imageRefs.current[index] = el } }}
+                                        src={env.image}
+                                        alt={env.topText}
+                                        fill
+                                        className="object-cover rounded-lg"
+                                    />
+                                </div>
 
                                 {/* Overlay Text */}
                                 <div className="absolute top-4 left-4 text-black px-3 py-1 rounded-2xl backdrop-blur-sm bg-white/10 text-sm">
@@ -164,13 +172,13 @@ export default function Environments() {
                     </button>
 
                     <div className="w-full h-[60vh] relative mt-10">
-                        <Image
+                        {/* <Image
                             src={environments[selected].image}
                             alt="Expanded"
                             layout="fill"
                             objectFit="cover"
                             className="rounded-lg"
-                        />
+                        /> */}
                         <div className="absolute top-4 left-4 text-white bg-black/40 backdrop-blur-sm p-2 rounded">
                             {environments[selected].topText}
                         </div>

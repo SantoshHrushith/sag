@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Silver",
+    "color": "#E5E5E5",
+    "image": "https://ourahealth.imgix.net/blue-sky/pop/gen4/finishes-carousel-slide-silver.png?ixlib=js-3.8.0&auto=format&fit=crop&fm=png&ar=2%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.51&fp-z=1.15&q=70&w=1920&s=2e1d3272a6ead1f907787a0fde071870"
+  },
+  {
+    "label": "Black",
+    "color": "#222222",
+    "image": "https://ourahealth.imgix.net/blue-sky/pop/gen4/finishes-carousel-slide-silver.png?ixlib=js-3.8.0&auto=format&fit=crop&fm=png&ar=2%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.51&fp-z=1.15&q=70&w=1920&s=2e1d3272a6ead1f907787a0fde071870"
+  },
+  {
+    "label": "Matte",
+    "color": "#888888",
+    "image": "https://ourahealth.imgix.net/blue-sky/pop/gen4/finishes-carousel-slide-silver.png?ixlib=js-3.8.0&auto=format&fit=crop&fm=png&ar=2%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.51&fp-z=1.15&q=70&w=1920&s=2e1d3272a6ead1f907787a0fde071870"
+  },
+  {
+    "label": "Gold",
+    "color": "#D4AF37",
+    "image": "https://ourahealth.imgix.net/blue-sky/pop/gen4/finishes-carousel-slide-silver.png?ixlib=js-3.8.0&auto=format&fit=crop&fm=png&ar=2%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.51&fp-z=1.15&q=70&w=1920&s=2e1d3272a6ead1f907787a0fde071870"
+  },
+  {
+    "label": "Rose",
+    "color": "#F5D0C5",
+    "image": "https://ourahealth.imgix.net/blue-sky/pop/gen4/finishes-carousel-slide-silver.png?ixlib=js-3.8.0&auto=format&fit=crop&fm=png&ar=2%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.51&fp-z=1.15&q=70&w=1920&s=2e1d3272a6ead1f907787a0fde071870"
+  }
+]

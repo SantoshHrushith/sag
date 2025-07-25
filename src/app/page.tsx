@@ -6,6 +6,9 @@ import Environments from "@/componets/Environments";
 // import Exploded from "@/componets/Exploded";
 // import Exp from "@/componets/Exp";
 import Exp1 from "@/componets/Exp1";
+import ProductColorSelector from "@/componets/ProductColorSelector";
+import Tabs from "@/componets/Tabs";
+import Collage from "@/componets/Collage";
 // import VideoScroller from "@/componets/Video";
 
 export default function Home() {
@@ -115,18 +118,20 @@ export default function Home() {
           )}
         </div>
       </div>
-      
+
       {/* why saga Powertrack */}
       <div className="text-center text-4xl md:text-6xl font-bold leading-tight">
         SAGA PowerTracks<br />
         Make your Surrounding <span className="italic">Elegant</span>
       </div>
       <Environments />
-          {/* <VideoScroller/> */}
+      {/* <VideoScroller/> */}
       {/* <Exploded/> */}
       {/* <Exp/> */}
-      <Exp1/>
+      <Exp1 />
+      <ProductColorSelector />
+      <Tabs />
+      <Collage/>
     </div>
   );
 }
- 
