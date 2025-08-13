@@ -100,7 +100,6 @@
 //                 scrub: true,
 //                 pin: true,
 //                 anticipatePin: 1,
-//                 markers: true,
 //             },
 //         });
 
@@ -257,7 +256,6 @@ const Exploded: React.FC = () => {
                 scrub: true,
                 pin: true,
                 anticipatePin: 1,
-                markers: false,
             },
         });
 

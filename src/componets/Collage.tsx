@@ -103,7 +103,6 @@ export default function Collage() {
 //         start: "top bottom", // Footer's top reaches bottom of viewport
 //         end: "bottom bottom",
 //         scrub: true,
-//         markers: true, // set to true to debug
 //     });
 
 //     return () => trigger.kill();
@@ -121,7 +120,6 @@ export default function Collage() {
 //             start: "top bottom",   // starts when footer enters viewport
 //             end: "bottom bottom",     // ends when footer leaves
 //             scrub: true,
-//             // markers:true,
 //         }
 //     });
 // }, []);

@@ -11,9 +11,18 @@
   --color-green:  #01814E;
 
 }
+/* styles/globals.css */
+.curved-gallery {
+  --v-offset: 60px;
+  --curve-height: 120px;
+}
+
 body {
   background-color: white;
   font-family: 'Poppins', sans-serif !important;
+}
+.poppins{
+  font-family: 'Poppins';
 }
 .scrollbar-hide {
   scrollbar-width: none; /* Firefox */

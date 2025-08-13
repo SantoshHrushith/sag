@@ -20,7 +20,6 @@ export default function Header() {
 
   ];
 
-  // ✅ Lock scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';

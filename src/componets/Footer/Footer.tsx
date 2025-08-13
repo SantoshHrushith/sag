@@ -28,7 +28,6 @@ export default function Footer() {
     //             start: "top bottom",   // starts when footer enters viewport
     //             end: "bottom bottom",     // ends when footer leaves
     //             scrub: true,
-    //             // markers:true,
     //         }
     //     });
     // }, []);
@@ -42,7 +41,6 @@ export default function Footer() {
             start: "top bottom", // Footer's top reaches bottom of viewport
             end: "bottom bottom",
             scrub: true,
-            markers: true, // set to true to debug
         });
 
         return () => trigger.kill();
@@ -60,7 +58,6 @@ export default function Footer() {
                 start: "top bottom",   // starts when footer enters viewport
                 end: "bottom bottom",     // ends when footer leaves
                 scrub: true,
-                // markers:true,
             }
         });
     }, []);
