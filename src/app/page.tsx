@@ -13,6 +13,7 @@ import Collage from "@/componets/Collage";
 
 export default function Home() {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,27 +28,34 @@ export default function Home() {
     <div className="font-sans">
       {/* === Hero Section === */}
       <div className="relative w-full h-screen overflow-hidden">
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          src={
-            isMobileOrTablet
-              ? "/videos/gen4-hero-mobile-final.mp4"
-              : "/videos/gen4-hero-desktop-tony-2.mp4"
-          }
-          autoPlay
-          muted
-          playsInline
-        />
-        <div className="absolute z-10 w-full h-full flex items-start justify-start px-6 sm:px-20">
-          <div className="pt-[25%] sm:pt-[15%] max-w-xl">
-            <h1 className="text-4xl sm:text-6xl font-bold text-white leading-snug">
-              Sleeker.<br />
-              Smarter.<br />
-              Made for you.
+        {!videoEnded ? (
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            src={
+              isMobileOrTablet
+                ? "https://eubiq.b-cdn.net/saga/4k%20render.mp4"
+                : "https://eubiq.b-cdn.net/saga/4k%20render.mp4"
+            }
+            autoPlay
+            muted
+            playsInline
+            onEnded={() => setVideoEnded(true)}
+          />
+        ) : (
+          <img
+            src="/hero.png"
+            alt="Saga Static"
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          />
+        )}
+        <div className="absolute z-10 w-full h-full flex items-end justify-center pb-12">
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-6xl font-[100] text-white leading-snug">
+              Designed in <span className="font-[600]">UAE</span> to <span className="font-[600]">Empower</span> the <span className="font-[500]">World</span>
             </h1>
-            <button className="mt-6 px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-gradient-to-r from-blue-400 to-green-400 transition-all duration-300">
-              Explore More
-            </button>
+            <p className="mt-2 text-lg text-white font-normal">
+              MODULAR POWER, INFINITE POSSIBILITIES
+            </p>
           </div>
         </div>
       </div>
@@ -128,7 +136,7 @@ export default function Home() {
       {/* <VideoScroller/> */}
       {/* <Exploded/> */}
       {/* <Exp/> */}
-      <Exp1 />
+      {/* <Exp1 /> */}
       <ProductColorSelector />
       <Tabs />
       <Collage/>
