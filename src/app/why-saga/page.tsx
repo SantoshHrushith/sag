@@ -7,6 +7,8 @@ import Curved from "@/componets/Curved";
 import WhySaga from "@/componets/Why";
 import TechnologyQuote from "@/componets/Technologyquote";
 import StatsSection from "@/componets/StatsSection";
+import ImageSlider from "@/componets/ImageSlider";
+import StatsBanner from "@/componets/StatsBanner";
 
 
 export default function WHYSAGA() {
@@ -43,10 +45,8 @@ export default function WHYSAGA() {
                 </div>
             </div>
             <StatsSection />
-            <HeroCarousel />
-            <Curved />
-            <WhySaga />
-            <TechnologyQuote />
+            <ImageSlider/>
+            <StatsBanner/>
 
         </div>
     );

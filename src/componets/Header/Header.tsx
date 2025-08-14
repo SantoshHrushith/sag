@@ -64,7 +64,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-blue/30 backdrop-blur-md shadow-md' : 'bg-transparent'
+        scrolled ? 'bg-black/80 backdrop-blur-md shadow-md' : 'bg-transparent'
       } ${
         scrollDirection === 'down' && isDesktop
           ? '-translate-y-full'
