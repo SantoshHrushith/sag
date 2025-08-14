@@ -30,7 +30,7 @@ export default function StatsSection() {
                     <div className="mx-auto mt-20 flex flex-col md:flex-row justify-around gap-8">
                         {/* Card 1 */}
                         <div className="bg-white/40 rounded-[2rem] py-4 px-6 flex flex-col items-center shadow-xl backdrop-blur-xs box-border 
-                                        w-[260px] h-[200px]">
+                                        w-[280px] h-[200px]">
                             <p className="text-xl font-[500] mb-2 text-left ">
                                 <span className="text-yellow">20+</span> Engineers & Designers
                             </p>
@@ -42,7 +42,7 @@ export default function StatsSection() {
 
                         {/* Card 2 */}
                         <div className="bg-white/40 rounded-[2rem] py-4 px-6 flex flex-col items-center shadow-xl backdrop-blur-xs box-border 
-                                        w-[260px] h-[200px]">
+                                        w-[280px] h-[200px]">
                             <p className="text-xl font-[500] mb-2 text-left ">
                                 <span className="text-yellow">4</span> Generations of innovation,
                             </p>
@@ -53,7 +53,7 @@ export default function StatsSection() {
 
                         {/* Card 3 */}
                        <div className="bg-white/40 rounded-[2rem] py-4 px-6 flex flex-col items-center shadow-xl backdrop-blur-xs box-border 
-                                        w-[260px] h-[200px]">                           
+                                        w-[280px] h-[200px]">                           
                             <p className="text-xl font-[500] mb-2 text-left w-[100%]">
                                 <span className="text-yellow">10K+</span> Units
                                 <span className="block">Installed</span>

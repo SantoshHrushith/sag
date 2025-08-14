@@ -64,10 +64,10 @@ export default function Home() {
       <Curved />
       <WhySaga />
       <TechnologyQuote />
-      <Environments/>
+      {/* <Environments/>
       <Collage/>
       <RingSelector/>
-      <TabbedFeatures/>
+      <TabbedFeatures/> */}
 
     </div>
   );
