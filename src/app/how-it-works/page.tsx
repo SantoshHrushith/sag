@@ -29,7 +29,7 @@ export default function HowitWorks() {
             <div className=" relative w-full h-screen overflow-hidden">
                 <video
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                    src="https://eubiq.b-cdn.net/saga/full%20hD.mp4"
+                    src="https://eubiq.b-cdn.net/saga/vid.mp4"
                     autoPlay
                     muted
                     playsInline
