@@ -8,7 +8,6 @@ const features = [
         highlight: "Seal",
         desc: "No object larger than 1mm can reach live wires.",
         img: "https://eubiq.b-cdn.net/saga/shot%2006.png",
-        green: true,
     },
     {
         title: "Internal",
@@ -39,7 +38,6 @@ const features = [
         highlight: "With Twist",
         desc: "Just rotate 90° to activate power.",
         img: "https://eubiq.b-cdn.net/saga/shot%2006.png",
-        green: true,
     },
 ];
 
@@ -66,8 +64,7 @@ export default function WhySaga() {
                 {features.map((f, i) => (
                     <div
                         key={i}
-                        className={`flex flex-col items-start rounded-2xl p-2 w-[150px] h-[340px] transition-transform duration-200 hover:scale-105 ${f.green ? "bg-green text-white" : "bg-white/60 text-gray-800"
-                            }`}
+                        className={`flex flex-col items-start rounded-2xl p-2 w-[150px] h-[340px] transition-transform duration-200 hover:scale-105 bg-white/70 hover:bg-green hover:text-white`}
                         style={{
                             minWidth: 210,
                             minHeight: 340,
@@ -92,10 +89,7 @@ export default function WhySaga() {
                         
                         <div
                             key={index}
-                            className={`flex flex-col items-center rounded-2xl shadow-lg p-4 w-[90%] h-[500px] ${features[index].green
-                                ? "bg-green text-white"
-                                : "bg-white/60 text-gray-800"
-                                }`}
+                            className={`flex flex-col items-center rounded-2xl shadow-lg p-4 w-[90%] h-[500px] bg-white/70 hover:bg-green hover:text-white`}
                             style={{ position: 'relative', zIndex: 20,boxShadow: "6px 6px 39px rgba(0, 0, 23, 0.63)" }}
                         >
                             <img

@@ -2,13 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import HeroCarousel from "@/componets/HeroCarousel";
-import Curved from "@/componets/Curved";
-import WhySaga from "@/componets/Why";
-import TechnologyQuote from "@/componets/Technologyquote";
-import StatsSection from "@/componets/StatsSection";
-import ImageSlider from "@/componets/ImageSlider";
-import StatsBanner from "@/componets/StatsBanner";
 
 
 export default function HowitWorks() {

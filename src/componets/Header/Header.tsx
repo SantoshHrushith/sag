@@ -1,21 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IoMenu, IoClose } from 'react-icons/io5';
+import { IoChevronDown, IoChevronUp } from "react-icons/io5";
+
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
   const [isDesktop, setIsDesktop] = useState(false);
+  const [powertrackDropdown, setPowertrackDropdown] = useState(false);
+  // const dropdownRef = useRef<HTMLDivElement>(null);
+
   let lastScrollY = 0;
 
   const navLinks = [
     { name: 'Why SAGA', href: '/why-saga' },
     { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Powertracks', href: '/saga-powertracks' },
+    { name: 'Powertracks', href: '/powertracks' },
     { name: 'Adaptors', href: '/saga-adaptors' },
 
   ];
@@ -44,6 +49,7 @@ export default function Header() {
   // Scroll detection for desktop only
   useEffect(() => {
     const handleScroll = () => {
+      setPowertrackDropdown(false);
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 50);
 
@@ -54,6 +60,7 @@ export default function Header() {
           setScrollDirection('up');
         }
         lastScrollY = currentScrollY;
+
       }
     };
 
@@ -63,13 +70,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/80 backdrop-blur-md shadow-md' : 'bg-transparent'
-      } ${
-        scrollDirection === 'down' && isDesktop
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+        } ${scrollDirection === 'down' && isDesktop
           ? '-translate-y-full'
           : 'translate-y-0'
-      }`}
+        }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex mt-2 items-center justify-between h-16 relative">
         {/* Logo */}
@@ -86,7 +91,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-6 font-medium relative items-center">
+        {/* <nav className="hidden md:flex gap-6 font-medium relative items-center">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -96,6 +101,68 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
+        </nav> */}
+        <nav className="hidden md:flex font-medium items-center w-full justify-between">
+          {/* Center: Navigation Links */}
+          <div className="flex gap-8 flex-1 justify-center">
+            {navLinks.map((link) =>
+              link.name === "Powertracks" ? (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => setPowertrackDropdown(true)}
+                  onMouseLeave={() => setPowertrackDropdown(false)}
+                >
+                  <Link href={link.href}>
+                  
+                  <button
+                    className={`flex items-center gap-1 p-4 transition-colors duration-200 cursor-pointer ${powertrackDropdown ? "text-yellow" : "text-white hover:text-yellow"
+                      }`}
+                    aria-haspopup="true"
+                    aria-expanded={powertrackDropdown}
+                  >
+                    {link.name}
+                    {powertrackDropdown ? (
+                      <IoChevronUp className="ml-1 w-4 h-4" />
+                    ) : (
+                      <IoChevronDown className="ml-1 w-4 h-4" />
+                    )}
+                  </button>
+                  </Link>
+                  {powertrackDropdown && (
+                    <div
+                      className="fixed left-0 top-17 w-screen text-white py-8 px-10 flex items-center z-40 bg-black/90 backdrop-blur-md shadow-md"
+                      style={{ minHeight: "120px" }}
+                    >
+                      <div className="flex flex-col ms-10 items-start w-full max-w-md ">
+                        <span className="text-gray-400 text-base mb-8">Explore Powertracks</span>
+                        <Link
+                          href="/powertracks#recess"
+                          className="text-2xl font-normal mb-6 hover:underline hover:text-yellow transition-colors duration-200"
+                        >
+                          Recess Track
+                        </Link>
+                        <Link
+                          href="/powertracks#surface"
+                          className="text-2xl font-normal hover:underline hover:text-yellow transition-colors duration-200"
+                        >
+                          Surface Track
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-white hover:text-yellow p-4 transition-colors duration-200"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
+          </div>
         </nav>
 
         {/* Buy Now Button */}
@@ -160,3 +227,61 @@ export default function Header() {
     </header>
   );
 }
+{/* <nav className="hidden md:flex font-medium items-center w-full justify-between">
+          <div className="flex gap-8 flex-1 justify-center">
+            {navLinks.map((link) =>
+              link.name === "Powertracks" ? (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => setPowertrackDropdown(true)}
+                  onMouseLeave={() => setPowertrackDropdown(false)}
+                >
+                  <button
+                    className={`flex items-center gap-1 p-4 transition-colors duration-200 ${powertrackDropdown ? "text-yellow" : "text-white hover:text-yellow"
+                      }`}
+                    aria-haspopup="true"
+                    aria-expanded={powertrackDropdown}
+                  >
+                    {link.name}
+                    {powertrackDropdown ? (
+                      <IoChevronUp className="ml-1 w-4 h-4" />
+                    ) : (
+                      <IoChevronDown className="ml-1 w-4 h-4" />
+                    )}
+                  </button>
+                  {powertrackDropdown && (
+                    <div
+                      className="fixed left-0 top-17 w-screen text-white py-8 px-10 flex items-center z-40 bg-black/80 backdrop-blur-md shadow-md"
+                      style={{ minHeight: "120px" }}
+                    >
+                      <div className="flex flex-col ms-10 items-start w-full max-w-md ">
+                        <span className="text-gray-400 text-base mb-8">Explore Powertracks</span>
+                        <Link
+                          href="/saga-powertracks#recess"
+                          className="text-2xl font-normal mb-6 hover:underline hover:text-yellow transition-colors duration-200"
+                        >
+                          Recess Track
+                        </Link>
+                        <Link
+                          href="/saga-powertracks#surface"
+                          className="text-2xl font-normal hover:underline hover:text-yellow transition-colors duration-200"
+                        >
+                          Surface Track
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-white hover:text-yellow p-4 transition-colors duration-200"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
+          </div>
+        </nav> */}
