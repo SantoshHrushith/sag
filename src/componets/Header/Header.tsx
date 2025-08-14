@@ -15,8 +15,8 @@ export default function Header() {
   const navLinks = [
     { name: 'Why SAGA', href: '/why-saga' },
     { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Saga Powertracks', href: '/saga-powertracks' },
-    { name: 'Saga Adaptors', href: '/saga-adaptors' },
+    { name: 'Powertracks', href: '/saga-powertracks' },
+    { name: 'Adaptors', href: '/saga-adaptors' },
 
   ];
 
@@ -64,7 +64,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/10 backdrop-blur-md shadow-md' : 'bg-transparent'
+        scrolled ? 'bg-blue/30 backdrop-blur-md shadow-md' : 'bg-transparent'
       } ${
         scrollDirection === 'down' && isDesktop
           ? '-translate-y-full'

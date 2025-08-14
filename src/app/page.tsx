@@ -6,6 +6,10 @@ import HeroCarousel from "@/componets/HeroCarousel";
 import Curved from "@/componets/Curved";
 import WhySaga from "@/componets/Why";
 import TechnologyQuote from "@/componets/Technologyquote";
+import Environments from "@/componets/Environments";
+import Collage from "@/componets/Collage";
+import RingSelector from "@/componets/ProductColorSelector";
+import TabbedFeatures from "@/componets/Tabs";
 
 
 export default function Home() {
@@ -22,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="font-sans">
+    <div className="font-poppins">
       {/* === Hero Section === */}
       <div className="relative w-full h-screen overflow-hidden">
         {!videoEnded ? (
@@ -60,6 +64,10 @@ export default function Home() {
       <Curved />
       <WhySaga />
       <TechnologyQuote />
+      <Environments/>
+      <Collage/>
+      <RingSelector/>
+      <TabbedFeatures/>
 
     </div>
   );
